@@ -11,12 +11,12 @@ $config['use_captcha'] = true;
  *
  * What type of captcha?
  *
- * 'recaptcha'  = Google Recaptcha v2
- * 'recaptcha3' = Google Recaptcha v3
- * 'inbuilt'    = inbuilt captcha system
+ * "recaptcha"  = Google Recaptcha v2
+ * "recaptcha3" = Google Recaptcha v3
+ * "inbuilt"    = inbuilt captcha system
  *
  */
-$config["captcha_type"] = 'inbuilt';
+$config['captcha_type'] = "inbuilt";
 
 /**
  *
@@ -40,7 +40,7 @@ $config['block_duration'] = 15;
  * get site key @ www.google.com/recaptcha/admin
  *
  */
-$config["recaptcha_site_key"] = "";
+$config['recaptcha_site_key'] = false;
 
 /**
  *
@@ -48,7 +48,7 @@ $config["recaptcha_site_key"] = "";
  * get secret key @ www.google.com/recaptcha/admin
  *
  */
-$config["recaptcha_secret_key"] = "";
+$config['recaptcha_secret_key'] = false;
 
 // Theme
 $config['recaptcha_theme'] = 'dark'; // dark - light

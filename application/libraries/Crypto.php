@@ -154,6 +154,42 @@ class Crypto
     }
 
     /**
+     * Creates a SHA256 hash of the password using username, password and email
+     *
+     * @param string $username
+     * @param string $password
+     * @param string $email
+     * @return array
+     */
+    public function SHA256(string $username = "", string $password = "", string $email = ""): array
+    {
+        if (!is_string($username)) {
+            $username = "";
+        }
+        if (!is_string($password)) {
+            $password = "";
+        }
+        if (!is_string($email)) {
+            $email = "";
+        }
+
+        $pepper = getenv('__fusionPepper');
+        if ($pepper === false) {
+            $pepper = 'j2K8!xZp4vQ9mR7wT6sB1eL3cH0uN42A';
+        }
+
+        $username = $this->upperOnlyLatin($username);
+        $password = $this->upperOnlyLatin($password);
+        $email = $this->upperOnlyLatin($email);
+
+        $digest = hash('sha256', $username . ':' . $password . ':' . $email . ':' . $pepper, true);
+
+        return [
+            'verifier' => strtoupper(bin2hex(strrev($digest)))
+        ];
+    }
+
+    /**
      * Creates a hash of the password we enter
      * @param String $username
      * @param String $password in plain text
@@ -221,5 +257,13 @@ class Crypto
         }
 
         return implode(array_reverse($bytes ?? []));
+    }
+
+    /**
+     * Convert only ASCII latin letters to uppercase.
+     */
+    private function upperOnlyLatin(string $string): string
+    {
+        return strtr($string, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     }
 }

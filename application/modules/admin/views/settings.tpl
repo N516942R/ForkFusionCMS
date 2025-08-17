@@ -40,9 +40,10 @@
 									<option value="SRP6" {if $config.account_encryption == 'SRP6'}selected{/if}>SRP6</option>
 									<option value="SPH" {if $config.account_encryption == 'SPH'}selected{/if}>SPH</option>
 									<option value="SRP" {if $config.account_encryption == 'SRP'}selected{/if}>SRP</option>
+                                    <option value="SHA256" {if $config.account_encryption == 'SHA256'}selected{/if}>SHA256</option>
 								</select>
 							</div>
-							<p class="col-sm-12 col-form-label"><span style='color: #f00;'>SRP6:</span>Select this for most modern emulators (with <b>salt</b> and <b>verifier</b> columns in <b>auth.accounts</b> table).<br/><span style='color: #f00;'>SPH:</span> Select this for aged emulators (with <b>sha_pass_hash</b> column in <b>auth.accounts</b> table).<br/><span style='color: #f00;'>SRP:</span> Mostly for <b>cMangos</b> and <b>vMangos</b> emulators.</p>
+							<p class="col-sm-12 col-form-label"><span style='color: #f00;'>SRP6:</span>Select this for most modern emulators (with <b>salt</b> and <b>verifier</b> columns in <b>auth.accounts</b> table).<br/><span style='color: #f00;'>SPH:</span> Select this for aged emulators (with <b>sha_pass_hash</b> column in <b>auth.accounts</b> table).<br/><span style='color: #f00;'>SRP:</span> Mostly for <b>cMangos</b> and <b>vMangos</b> emulators.<br/><span style='color: #f00;'>SHA256:</span> For custom LegionCore UWoW sources using username+password+email+pepper.</p>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">RBAC</label>

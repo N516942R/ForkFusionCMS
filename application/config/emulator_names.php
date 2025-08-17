@@ -11,6 +11,7 @@ $emulators = [
     'trinity_wotlkclassic'     => 'TrinityCore - Wotlk Classic (3.4.3)',
     'trinity_cataclassic'      => 'TrinityCore - Cataclysm Classic (4.4.2)',
     'trinity_old'              => 'TrinityCore (3.3.5a) Old Base',
+    'uwow_legion'              => 'LegionCore - UWoW (7.3.5)',
     'skyfire'                  => 'Skyfire (5.4.8)',
     'azerothcore'              => 'AzerothCore (3.3.5a)',
     'azerothcore_old'          => 'AzerothCore (3.3.5a) Old Base',

@@ -70,6 +70,11 @@ class Accounts_model extends CI_Model
                 if (column('account', 'sha_pass_hash')){
                     unset($columns[column('account', 'sha_pass_hash')]);
                 }
+            } elseif ($encryption == 'SHA256') {
+                if (column('account', 'verifier') && column('account', 'salt')){
+                    unset($columns[column('account', 'verifier')]);
+                    unset($columns[column('account', 'salt')]);
+                }
             }
 
             $query = $this->connection->query("SELECT " . formatColumns($columns) . " FROM " . table("account") . " WHERE " . column("account", "id") . " = ?", [$id]);
